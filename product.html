@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product details and specifications">
+    <title>Product Details - ShopHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>ShopHub</span>
+                    </a>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="index.html#products">Products</a>
+            <i class="fas fa-chevron-right"></i>
+            <span id="breadcrumbCategory">Category</span>
+            <i class="fas fa-chevron-right"></i>
+            <span id="breadcrumbProduct">Product</span>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <div class="product-image-section">
+                    <div class="product-main-image">
+                        <img id="productImage" src="" alt="Product Image">
+                    </div>
+                </div>
+                
+                <div class="product-info-section">
+                    <h1 id="productTitle" class="product-title">Product Name</h1>
+                    
+                    <div class="product-rating" id="productRating">
+                        <!-- Stars will be inserted here -->
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="price" id="productPrice">$0.00</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p id="productDescription">Product description goes here.</p>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" id="decreaseQty">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="quantity" value="1" min="1" max="99">
+                                <button class="qty-btn" id="increaseQty">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-large" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <p><strong>Category:</strong> <span id="productCategory"></span></p>
+                        <p><strong>Availability:</strong> <span class="in-stock">In Stock</span></p>
+                        <p><strong>SKU:</strong> <span id="productSku"></span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Specifications -->
+            <div class="product-specifications">
+                <h2>Specifications</h2>
+                <div class="specs-grid" id="specsGrid">
+                    <div class="spec-item">
+                        <span class="spec-label">Brand:</span>
+                        <span class="spec-value" id="specBrand">N/A</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Model:</span>
+                        <span class="spec-value" id="specModel">N/A</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Warranty:</span>
+                        <span class="spec-value">1 Year</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Shipping:</span>
+                        <span class="spec-value">Free Shipping</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Customer Reviews -->
+            <div class="product-reviews">
+                <h2>Customer Reviews</h2>
+                <div class="reviews-summary">
+                    <div class="average-rating">
+                        <span class="rating-number">4.5</span>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">Based on 127 reviews</span>
+                    </div>
+                </div>
+                
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">John Doe</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-date">December 10, 2024</div>
+                        <div class="review-text">
+                            Excellent product! Great quality and fast delivery. Highly recommended!
+                        </div>
+                    </div>
+                    
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-name">Jane Smith</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-date">December 5, 2024</div>
+                        <div class="review-text">
+                            Good value for money. Works as expected. Would buy again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">Related Products</h2>
+            <div class="products-grid" id="relatedProductsGrid">
+                <!-- Related products will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About ShopHub</h3>
+                    <p>Your trusted online store for quality products at great prices.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
