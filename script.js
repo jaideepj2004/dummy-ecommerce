@@ -343,7 +343,7 @@ function goToProduct(productId) {
 // ===========================
 // Category Filtering
 // ===========================
-function filterByCategory(category) {
+function filterByCategory(category, clickedButton = null) {
     const filteredProducts = category === 'all' 
         ? products 
         : products.filter(p => p.category === category);
@@ -353,8 +353,10 @@ function filterByCategory(category) {
     // Update active button
     $$('.category-btn').forEach(btn => {
         btn.classList.remove('active');
+        if (btn.dataset.category === category) {
+            btn.classList.add('active');
+        }
     });
-    event.target.classList.add('active');
 }
 
 // ===========================
@@ -606,19 +608,29 @@ function loadCheckout() {
     paymentMethods.forEach(method => {
         method.addEventListener('change', (e) => {
             if (e.target.value === 'card') {
-                cardDetails.style.display = 'block';
+                if (cardDetails) cardDetails.style.display = 'block';
                 // Make card fields required
-                $('#cardNumber').required = true;
-                $('#cardName').required = true;
-                $('#expiryDate').required = true;
-                $('#cvv').required = true;
+                const cardNumber = $('#cardNumber');
+                const cardName = $('#cardName');
+                const expiryDate = $('#expiryDate');
+                const cvv = $('#cvv');
+                
+                if (cardNumber) cardNumber.required = true;
+                if (cardName) cardName.required = true;
+                if (expiryDate) expiryDate.required = true;
+                if (cvv) cvv.required = true;
             } else {
-                cardDetails.style.display = 'none';
+                if (cardDetails) cardDetails.style.display = 'none';
                 // Make card fields optional
-                $('#cardNumber').required = false;
-                $('#cardName').required = false;
-                $('#expiryDate').required = false;
-                $('#cvv').required = false;
+                const cardNumber = $('#cardNumber');
+                const cardName = $('#cardName');
+                const expiryDate = $('#expiryDate');
+                const cvv = $('#cvv');
+                
+                if (cardNumber) cardNumber.required = false;
+                if (cardName) cardName.required = false;
+                if (expiryDate) expiryDate.required = false;
+                if (cvv) cvv.required = false;
             }
         });
     });
